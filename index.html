@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SweetBite - Toko Kue Terbaik</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sweetpink: "#ffc1cc",
+              deeppink: "#d81b60",
+              lightpink: "#ff8fab",
+              hoverPink: "#ffb6c1",
+              magenta: "#c2185b",
+              palePink: "#ffcdd2",
+              veryLightPink: "#ffebee",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-sweetpink text-gray-800 font-poppins">
+    <!-- Header with Responsive Hamburger Menu -->
+    <header
+      class="flex justify-between items-center px-4 md:px-[60px] py-5 bg-white sticky top-0 z-50 shadow-sm"
+    >
+      <div class="font-semibold text-xl text-deeppink">SweetBite</div>
+
+      <!-- Mobile hamburger button -->
+      <button class="lg:hidden flex items-center" id="mobile-menu-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-deeppink"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:block">
+        <a
+          href="#home"
+          class="ml-5 text-gray-500 text-base font-medium hover:text-deeppink transition-colors duration-300"
+          >Home</a
+        >
+        <a
+          href="#products"
+          class="ml-5 text-gray-500 text-base font-medium hover:text-deeppink transition-colors duration-300"
+          >Products</a
+        >
+        <a
+          href="#about"
+          class="ml-5 text-gray-500 text-base font-medium hover:text-deeppink transition-colors duration-300"
+          >About</a
+        >
+        <a
+          href="#contact"
+          class="ml-5 text-gray-500 text-base font-medium hover:text-deeppink transition-colors duration-300"
+          >Contact</a
+        >
+      </div>
+
+      <a
+        href="#contact"
+        class="hidden lg:block bg-lightpink text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-hoverPink transition-colors duration-300"
+        >Order Now</a
+      >
+
+      <!-- Mobile Navigation Menu (Hidden by default) -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white z-50 hidden flex-col items-center justify-center"
+      >
+        <button class="absolute top-5 right-5" id="close-menu-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-deeppink"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div class="flex flex-col items-center space-y-6">
+          <a href="#home" class="text-xl text-deeppink font-medium">Home</a>
+          <a href="#products" class="text-xl text-deeppink font-medium"
+            >Products</a
+          >
+          <a href="#about" class="text-xl text-deeppink font-medium">About</a>
+          <a href="#contact" class="text-xl text-deeppink font-medium"
+            >Contact</a
+          >
+          <a
+            href="#contact"
+            class="mt-6 bg-lightpink text-white px-8 py-3 rounded-lg text-base font-medium"
+            >Order Now</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-[60px] py-10 lg:py-20 bg-sweetpink"
+    >
+      <div class="w-full lg:max-w-[50%] mb-10 lg:mb-0">
+        <h1
+          class="text-4xl md:text-5xl lg:text-[60px] font-extrabold text-deeppink leading-tight mb-5"
+        >
+          Indulge in
+          <span class="text-lightpink font-light">Sweetness</span> with
+          SweetBite
+        </h1>
+        <p class="text-base text-gray-500 mb-7 leading-relaxed">
+          Discover the most delicious cakes and pastries, made with love and the
+          finest ingredients to satisfy your sweet cravings.
+        </p>
+        <div class="flex gap-4">
+          <a
+            href="#products"
+            class="bg-transparent text-deeppink border border-deeppink px-6 py-3 rounded text-base font-medium hover:bg-veryLightPink transition-colors duration-300"
+            >Explore More</a
+          >
+        </div>
+      </div>
+      <div
+        class="w-full lg:w-[40%] h-[300px] md:h-[350px] lg:h-[400px] rounded-xl shadow-lg overflow-hidden relative"
+      >
+        <div class="absolute top-2.5 left-2.5 flex gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ff4081]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ffd740]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#64dd17]"></span>
+        </div>
+        <img
+          src="https://i.pinimg.com/736x/95/a7/73/95a7731ce54214a93eb44b718a2e6e5d.jpg"
+          alt="SweetBite Hero Cake"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </section>
+
+    <!-- Trusted Section -->
+    <section
+      class="py-10 md:py-[60px] px-4 md:px-[60px] bg-magenta text-white text-center"
+    >
+      <h2 class="text-3xl md:text-4xl font-bold mb-5 text-white">
+        Trusted by Sweet Lovers
+      </h2>
+      <p
+        class="text-sm md:text-base text-palePink max-w-[800px] mx-auto leading-relaxed"
+      >
+        These are the delighted customers who place their trust in
+        SweetBite—recognizing our unwavering commitment to quality and
+        satisfaction. With every order, we aim to deliver exceptional flavors,
+        tailored designs, and memorable experiences that elevate celebrations,
+        enhance joy, and create lasting memories.
+      </p>
+    </section>
+
+    <!-- Offerings Section -->
+    <section class="px-4 md:px-[60px] py-10 md:py-[60px] bg-gray-100">
+      <h2 class="text-3xl md:text-4xl font-bold text-deeppink mb-5 text-center">
+        Our Sweet Offerings
+      </h2>
+      <p
+        class="text-sm md:text-base text-gray-500 mb-10 text-center max-w-3xl mx-auto"
+      >
+        We provide a range of delightful treats to satisfy every craving.
+      </p>
+      <div class="flex flex-wrap gap-8 justify-center">
+        <div
+          class="bg-white rounded-xl shadow-md p-6 md:p-8 flex-1 min-w-full md:min-w-[330px] hover:shadow-lg transition-shadow duration-300"
+        >
+          <div class="border-b border-gray-100 pb-4 mb-4">
+            <h3 class="text-2xl font-semibold text-deeppink mb-3">
+              Custom Cakes
+            </h3>
+          </div>
+          <p class="text-base text-gray-500 mb-4 leading-relaxed">
+            We specialize in creating custom cakes that are fully tailored to
+            match your unique occasion. Whether it's an elegant wedding cake, a
+            fun birthday surprise, or a one-of-a-kind creation for a special
+            celebration, we work closely with you to design something that
+            reflects your vision and tastes. Each cake is handcrafted with
+            precision, using only high-quality ingredients to ensure it not only
+            looks amazing but also tastes unforgettable.
+          </p>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <span class="text-deeppink text-sm font-medium"
+              >🎂 Perfect for birthdays, weddings, baby showers, graduations,
+              anniversaries, and more. Let your dream cake come to life.</span
+            >
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-xl shadow-md p-6 md:p-8 flex-1 min-w-full md:min-w-[330px] hover:shadow-lg transition-shadow duration-300"
+        >
+          <div class="border-b border-gray-100 pb-4 mb-4">
+            <h3 class="text-2xl font-semibold text-deeppink mb-3">
+              Pastries & More
+            </h3>
+          </div>
+          <p class="text-base text-gray-500 mb-4 leading-relaxed">
+            From flaky croissants and delicate macarons to rich éclairs and
+            melt-in-your-mouth cookies, our wide variety of pastries are freshly
+            baked each day using premium ingredients. Whether you're looking for
+            a light afternoon treat, a delightful breakfast pastry, or something
+            sweet to share, we have something to satisfy every craving. Each
+            bite is crafted with care, bringing you the comforting taste of
+            artisanal baking at its best.
+          </p>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <span class="text-deeppink text-sm font-medium"
+              >🥐 Baked fresh daily with love and the finest ingredients —
+              perfect for gifting or indulging yourself.
+            </span>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-xl shadow-md p-6 md:p-8 flex-1 min-w-full md:min-w-[330px] hover:shadow-lg transition-shadow duration-300"
+        >
+          <div class="border-b border-gray-100 pb-4 mb-4">
+            <h3 class="text-2xl font-semibold text-deeppink mb-3">
+              Event Catering
+            </h3>
+          </div>
+          <p class="text-base text-gray-500 mb-4 leading-relaxed">
+            Make your next event extra memorable with our dessert catering
+            services. We provide a curated selection of sweet treats and custom
+            dessert tables that can be tailored to fit the style, theme, and
+            size of your celebration. Whether it's a wedding, corporate event,
+            birthday party, or intimate gathering, our team will work with you
+            to ensure everything looks stunning and tastes even better.
+          </p>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <span class="text-deeppink text-sm font-medium"
+              >🍰 Customized dessert tables for any occasion — adding sweetness
+              and style to your events, big or small.</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Work Section -->
+    <section
+      id="products"
+      class="px-4 md:px-[60px] py-10 md:py-[60px] bg-sweetpink"
+    >
+      <h2 class="text-3xl md:text-4xl font-bold text-deeppink mb-5 text-center">
+        Our Recent Creations
+      </h2>
+      <p
+        class="text-sm md:text-base text-gray-500 mb-10 text-center max-w-3xl mx-auto"
+      >
+        Explore our portfolio of delightful treats that showcase our expertise
+        and creativity. Dive into a curated collection of our finest creations
+        from intricately designed custom cakes to elegant pastries and
+        beautifully styled dessert tables.
+      </p>
+      <div class="flex justify-center gap-5 mb-7 flex-wrap">
+        <button
+          data-category="all"
+          class="category-btn active text-deeppink text-base font-medium py-1.5 px-3 border-b-2 border-deeppink hover:border-deeppink hover:text-deeppink transition-all"
+        >
+          All
+        </button>
+        <button
+          data-category="cakes"
+          class="category-btn text-gray-500 text-base font-medium py-1.5 px-3 border-b-2 border-transparent hover:border-deeppink hover:text-deeppink transition-all"
+        >
+          Custom Cakes
+        </button>
+        <button
+          data-category="pastry"
+          class="category-btn text-gray-500 text-base font-medium py-1.5 px-3 border-b-2 border-transparent hover:border-deeppink hover:text-deeppink transition-all"
+        >
+          Pastry
+        </button>
+        <button
+          data-category="catering"
+          class="category-btn text-gray-500 text-base font-medium py-1.5 px-3 border-b-2 border-transparent hover:border-deeppink hover:text-deeppink transition-all"
+        >
+          Event Catering
+        </button>
+      </div>
+      <div class="flex flex-wrap gap-5 justify-center">
+        <div
+          class="w-full md:w-[350px] rounded-xl shadow-lg overflow-hidden product-card h-full flex flex-col"
+          data-category="cakes"
+        >
+          <img
+            src="https://i.pinimg.com/736x/f8/33/2b/f8332bc4260693286d0367cb36fa9533.jpg"
+            alt="custom cakes"
+            class="w-full h-[200px] object-cover"
+          />
+          <div class="p-5 bg-white text-left flex-1 flex flex-col">
+            <h3 class="text-lg font-semibold text-deeppink mb-2">
+              Custom Cakes
+            </h3>
+            <p class="text-sm font-medium text-deeppink mb-2 leading-relaxed">
+              Celebrate your special moments with cakes crafted with love.
+            </p>
+            <div class="overflow-auto flex-1">
+              <p class="text-xs text-gray-500 leading-relaxed line-clamp-4">
+                Personalized to your vision, our custom cakes are decorated with
+                charming details and filled with unforgettable flavors — perfect
+                for birthdays, anniversaries, or any meaningful occasion.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full md:w-[350px] rounded-xl shadow-lg overflow-hidden product-card h-full flex flex-col"
+          data-category="pastry"
+        >
+          <img
+            src="https://i.pinimg.com/736x/03/7e/72/037e729c3e3a0a88dd49d23328eae202.jpg"
+            alt="pastry"
+            class="w-full h-[200px] object-cover"
+          />
+          <div class="p-5 bg-white text-left flex-1 flex flex-col">
+            <h3 class="text-lg font-semibold text-deeppink mb-2">Pastry</h3>
+            <p class="text-sm font-medium text-deeppink mb-2 leading-relaxed">
+              Crispy on the outside, soft and sweet on the inside.
+            </p>
+            <div class="overflow-auto flex-1">
+              <p class="text-xs text-gray-500 leading-relaxed line-clamp-4">
+                Indulge in our premium pastries featuring rich chocolate ganache
+                and beautiful toppings. Ideal as a coffee companion or a fancy
+                afternoon treat.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full md:w-[350px] rounded-xl shadow-lg overflow-hidden product-card h-full flex flex-col"
+          data-category="catering"
+        >
+          <img
+            src="https://i.pinimg.com/736x/55/26/d5/5526d5a7519a2a71522a6f614f0a1111.jpg"
+            alt="event catering"
+            class="w-full h-[200px] object-cover"
+          />
+          <div class="p-5 bg-white text-left flex-1 flex flex-col">
+            <h3 class="text-lg font-semibold text-deeppink mb-2">
+              Event Catering
+            </h3>
+            <p class="text-sm font-medium text-deeppink mb-2 leading-relaxed">
+              Make your events sweeter with our delightful dessert selections.
+            </p>
+            <div class="overflow-auto flex-1">
+              <p class="text-xs text-gray-500 leading-relaxed line-clamp-4">
+                Make your next event extra memorable with our dessert catering
+                services. We provide a curated selection of sweet treats and
+                custom dessert tables that can be tailored to fit the style,
+                theme, and size of your celebration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="px-4 md:px-[80px] py-16 md:py-24 bg-white">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-deeppink mb-12 text-center"
+        >
+          About SweetBite
+        </h2>
+
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center gap-12"
+        >
+          <div class="w-full lg:w-[55%]">
+            <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+              We are a team of passionate bakers dedicated to creating
+              exceptional sweet experiences.
+            </p>
+
+            <p class="text-base text-gray-600 mb-12 leading-relaxed">
+              Founded in 2015, SweetBite has grown into a beloved bakery with a
+              focus on quality, innovation, and customer satisfaction. Our
+              diverse team brings together expertise to deliver delightful
+              treats that satisfy every craving and make celebrations memorable.
+            </p>
+
+            <div class="flex flex-wrap gap-16 mb-12">
+              <div>
+                <h3 class="text-4xl font-bold text-deeppink mb-1">150+</h3>
+                <p class="text-sm text-gray-500">Orders Completed</p>
+              </div>
+              <div>
+                <h3 class="text-4xl font-bold text-deeppink mb-1">5</h3>
+                <p class="text-sm text-gray-500">Team Members</p>
+              </div>
+              <div>
+                <h3 class="text-4xl font-bold text-deeppink mb-1">10</h3>
+                <p class="text-sm text-gray-500">Awards Won</p>
+              </div>
+            </div>
+
+            <div class="flex justify-center lg:justify-start">
+              <a
+                href="#contact"
+                class="inline-block border-2 border-deeppink text-deeppink px-8 py-3 rounded-md text-base font-medium hover:bg-deeppink hover:text-white transition-colors duration-300"
+              >
+                Get in Touch
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-[40%]">
+            <div
+              class="rounded-xl shadow-lg overflow-hidden h-auto lg:h-[400px]"
+            >
+              <img
+                src="https://i.pinimg.com/736x/7e/8d/0e/7e8d0e8b539eb4d9c47fa5f3c87a00ca.jpg"
+                alt="Team"
+                class="w-full h-full object-contain lg:object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="px-4 md:px-[60px] py-10 md:py-[60px] text-gray-800 flex flex-col lg:flex-row justify-between items-start gap-10 bg-sweetpink bg-opacity-30"
+    >
+      <div class="w-full lg:max-w-[50%]">
+        <h2 class="text-3xl md:text-4xl font-bold text-deeppink mb-5">
+          Let's Work Together
+        </h2>
+        <p class="text-sm md:text-base text-gray-600 mb-5 leading-relaxed">
+          Ready to satisfy your sweet cravings? Get in touch with us to discuss
+          how we can make your celebrations sweeter.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-full bg-veryLightPink flex items-center justify-center"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/109/109613.png"
+                alt="Time Icon"
+                class="w-4 h-4 opacity-70"
+              />
+            </div>
+            <p class="text-sm text-gray-600">Mon - Fri: 9:00 AM - 5:00 PM</p>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-full bg-veryLightPink flex items-center justify-center"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/927/927667.png"
+                alt="Location Icon"
+                class="w-4 h-4 opacity-70"
+              />
+            </div>
+            <p class="text-sm text-gray-600">123 Sweet Street, Cake City</p>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-full bg-veryLightPink flex items-center justify-center"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/126/126509.png"
+                alt="Phone Icon"
+                class="w-4 h-4 opacity-70"
+              />
+            </div>
+            <p class="text-sm text-gray-600">+1 (234) 567-890 (WhatsApp)</p>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 rounded-full bg-veryLightPink flex items-center justify-center"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
+                alt="Email Icon"
+                class="w-4 h-4 opacity-70"
+              />
+            </div>
+            <p class="text-sm text-gray-600">info@sweetbite.com</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full lg:w-1/2 bg-gradient-to-br from-deeppink via-lightpink to-palePink p-5 md:p-7 rounded-xl shadow-md bg-opacity-90 backdrop-blur-sm"
+      >
+        <input
+          type="text"
+          placeholder="Your Name"
+          class="w-full p-3 md:p-4 mb-4 border border-lightpink rounded bg-white bg-opacity-90 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-lightpink"
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          class="w-full p-3 md:p-4 mb-4 border border-lightpink rounded bg-white bg-opacity-90 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-lightpink"
+        />
+        <input
+          type="text"
+          placeholder="Subject"
+          class="w-full p-3 md:p-4 mb-4 border border-lightpink rounded bg-white bg-opacity-90 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-lightpink"
+        />
+        <textarea
+          placeholder="Your Message"
+          class="w-full p-3 md:p-4 mb-4 border border-lightpink rounded bg-white bg-opacity-90 text-gray-800 text-sm h-[100px] resize-none focus:outline-none focus:ring-2 focus:ring-lightpink"
+        ></textarea>
+        <button
+          class="w-full md:w-auto bg-white bg-opacity-80 text-deeppink hover:bg-deeppink hover:text-white px-6 py-3 border-none rounded text-base font-medium cursor-pointer transition-colors duration-300 shadow-sm"
+        >
+          Send Message
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deeppink text-white px-6 md:px-[60px] py-10">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
+      >
+        <div>
+          <h3 class="text-base mb-5 text-white font-semibold">SweetBite</h3>
+          <p class="text-sm text-palePink mb-4">
+            Delivering sweetness that inspires joy.
+          </p>
+          <div class="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/sayu.yunan/"
+              target="_blank"
+              class="inline-block"
+            >
+              <div
+                class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-palePink"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a
+              href="https://wa.me/qr/37QOW5CXSQ3JJ1"
+              target="_blank"
+              class="inline-block"
+            >
+              <div
+                class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-palePink"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a
+              href="https://x.com/sunsaii354944?t=VqfqJJB489wEXYZFaOYSHA&s=09"
+              target="_blank"
+              class="inline-block"
+            >
+              <div
+                class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 text-palePink"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-base mb-5 text-white font-semibold">Company</h3>
+          <a
+            href="#about"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >About Us</a
+          >
+          <a
+            href="#services"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Services</a
+          >
+          <a
+            href="#products"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Products</a
+          >
+          <a
+            href="#contact"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Contact</a
+          >
+        </div>
+        <div>
+          <h3 class="text-base mb-5 text-white font-semibold">Services</h3>
+          <a
+            href="#cakes"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Custom Cakes</a
+          >
+          <a
+            href="#pastries"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Pastries</a
+          >
+          <a
+            href="#catering"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Event Catering</a
+          >
+        </div>
+        <div>
+          <h3 class="text-base mb-5 text-white font-semibold">Resources</h3>
+          <a
+            href="#"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Blog</a
+          >
+          <a
+            href="#"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >FAQ</a
+          >
+          <a
+            href="#"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Testimonials</a
+          >
+          <a
+            href="#"
+            class="block text-sm text-palePink mb-2.5 hover:text-white"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+    </footer>
+    <div class="bg-[#c2185b] text-palePink text-center py-4 px-4 text-xs">
+      © 2025 SweetBite. All Rights Reserved. |
+      <a href="#" class="text-palePink mx-2.5 hover:text-white"
+        >Privacy Policy</a
+      >
+      |
+      <a href="#" class="text-palePink mx-2.5 hover:text-white"
+        >Terms of Service</a
+      >
+      | Icons by
+      <a
+        href="https://www.flaticon.com"
+        target="_blank"
+        class="text-palePink mx-2.5 hover:text-white"
+        >Flaticon</a
+      >
+    </div>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const closeMenuButton = document.getElementById("close-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+
+        // Function to open mobile menu
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("flex");
+          document.body.style.overflow = "hidden"; // Prevent scrolling
+        });
+
+        // Function to close mobile menu
+        function closeMenu() {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          document.body.style.overflow = ""; // Re-enable scrolling
+        }
+
+        // Close menu when clicking the close button
+        closeMenuButton.addEventListener("click", closeMenu);
+
+        // Close menu when clicking on a link
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+      });
+    </script>
+
+    <!-- Include script.js before the closing body tag -->
+    <script src="script.js"></script>
+  </body>
+</html>
